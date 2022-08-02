@@ -11,7 +11,7 @@ app.use(cors({
     origin: true,
     credentials: true,
 }));
-const Favourite_URI = 'mongodb://localhost:27017/FavoriteDB';
+const Favourite_URI = 'mongodb://localhost:27017/NutritionDB';
 
 app.use(bodyParser.json());
 app.use(logger('dev'));

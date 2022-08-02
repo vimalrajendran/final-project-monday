@@ -13,6 +13,8 @@ import { CardActionArea, CardActions } from "@mui/material";
 import { Link} from 'react-router-dom';
 import Button from '@mui/material/Button';
 import '../Main/App.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const FavouriteItems = () => {
@@ -49,7 +51,20 @@ const FavouriteItems = () => {
         headers: {
             "Content-Type": "application/json"
         }, withCredentials: true
-    });
+
+    },
+    toast('Removed from favourites', {
+      position: "top-center",
+      autoClose: 2000,
+      type: "success",
+      theme:"dark",
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      })
+    );
     data();
     console.log(response.statusText);
     // if (response.statusText === "OK") {

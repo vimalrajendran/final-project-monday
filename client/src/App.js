@@ -7,6 +7,8 @@ import Profile from "./components/Profile/profile";
 import BMI from "./components/BMI/bmicalc";
 import FavouriteItems from "./components/Favourite/favourites";
 import Foot from "./components/Footer/footer";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 	const user = localStorage.getItem("token");
@@ -14,7 +16,9 @@ function App() {
 	return (
 
 		<div>
+			<ToastContainer />
 			<Nav1 />
+			
 			<Routes>
 				{<Route path="/home" exact element={<MainDashboard />} />}
 				<Route path="/Signup" exact element={<Signup />} />

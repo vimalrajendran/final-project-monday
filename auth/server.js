@@ -21,8 +21,8 @@ app.use(express.urlencoded({extended:false}));
 app.use(bodyParser.json());
 //create mongoDB store to store session
 let store = new MongoDBStore({
-    uri: 'mongodb://localhost:27017/AuthenticationDB',
-    collection: 'uesrSessions'
+    uri: 'mongodb://localhost:27017/NutritionDB',
+    collection: 'userSessions'
 });
 
 // session middleware
@@ -58,7 +58,7 @@ passport.use(PassportAuth());
 app.use('/api/auth', userRoutes);
 
 //to connect your express app to mongodb
-mongoose.connect('mongodb://localhost:27017/AuthenticationDB');
+mongoose.connect('mongodb://localhost:27017/NutritionDB');
 mongoose.connection.once('open', () => {
     console.log('Connected to server');
 }).on('error', (err) => {

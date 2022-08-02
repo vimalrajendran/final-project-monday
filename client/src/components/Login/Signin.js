@@ -5,6 +5,8 @@ import { TextField } from './TextField';
 import * as Yup from 'yup';
 import axios  from 'axios';
 import {useNavigate ,Link} from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // const handleSubmit = async (e) => {
 //   e.preventDefault();
@@ -38,7 +40,9 @@ export const Signin = () => {
     password: Yup.string()
       .min(6, 'Password must be at least 6 charaters')
       .required('Password is required'),
-  });
+  }
+
+  );
   
   return (
     <div>
@@ -60,6 +64,17 @@ export const Signin = () => {
         // window.location = "/home";
         navigate('/home');
         resetForm();
+        toast('Logged-in successfully', {
+          position: "top-center",
+          autoClose: 2000,
+          type: "success",
+          theme: "colored",
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          })
       }}
     >
       {formik => (

@@ -7,7 +7,13 @@ import * as Yup from 'yup';
 
 import { useNavigate, Link } from 'react-router-dom'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export const Signup = () => {
+
+
+
   let navigate = useNavigate();
   const validate = Yup.object({
     firstName: Yup.string()
@@ -25,7 +31,10 @@ export const Signup = () => {
     confirmPassword: Yup.string()
       .oneOf([Yup.ref('password'), null], 'Password must match')
       .required('Confirm password is required'),
-  })
+  }
+
+  )
+
 
   return (
 
@@ -41,6 +50,17 @@ export const Signup = () => {
       onSubmit={async ({ firstName, lastName, email, password }, { resetForm }) => {
         await axios.post('http://localhost:7000/api/auth/register', ({ firstName, lastName, email, password }))
         resetForm();
+        toast('Registered successfully', {
+          position: "top-center",
+          autoClose: 2000,
+          type: "success",
+          theme: "colored",
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          })
       }}
 
     >

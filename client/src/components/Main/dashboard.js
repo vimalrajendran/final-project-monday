@@ -7,6 +7,8 @@ import axios from "axios";
 import { Modal, show, ModalBody, ModalHeader, ModalTitle, ModalFooter } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 // import Alert from '@mui/material/Alert';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -70,8 +72,20 @@ export default function MainDashboard() {
               FAT:props.item.food.nutrients.FAT,
               ENERC_KCAL:props.item.food.nutrients.ENERC_KCAL,
               CHOCDF:props.item.food.nutrients.CHOCDF
-            }
+            },
+            toast('Added to favourites', {
+                position: "top-center",
+                autoClose: 2000,
+                type: "success",
+                theme:"dark",
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                })
             );
+
           }
 
         return (
@@ -136,7 +150,7 @@ export default function MainDashboard() {
         <div id="bg">
 
             <div id="main" className="d-flex flex-column justify-content-center align-items-center" >
-                <h1 className='mb-5' style={{ 'fontSize': "120px", 'color': "white" }}>Eat Well Live Well</h1>
+                <h1 className='mb-5' style={{ 'fontSize': "120px", 'color': "white" }}><i>Eat Well Live Well</i></h1>
                 <p style={{ 'color': "white", 'fontSize': "30px" }}>Search your Favourite Food Items here..</p>
                 <Form className="d-flex" onSubmit={searchFood} >
                     <Form.Control style={{ 'width': "500px" }}

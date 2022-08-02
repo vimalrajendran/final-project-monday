@@ -1,5 +1,7 @@
 #main{
   /* background-image: url("bgimg.png"); */
+  display: flex;
+  flex-wrap: wrap;
   height: 520px;
   background: linear-gradient(rgba(0, 0, 0, 0.311), rgb(189, 197, 98)), url("bgimg.png");
 }
