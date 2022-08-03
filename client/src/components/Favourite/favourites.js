@@ -90,7 +90,7 @@ const FavouriteItems = () => {
       <h1><i>Your Favourites</i></h1>
       <Button component={Link} className="float-right" to='/home'>Go Back</Button>
       </div>
-      <div className="grid">
+      <div data-testid="cards" className="grid">
       {favlist.map((Item) => (
         <div key={Item.label}>
           <Card sx={{minHeight: 600}}>

@@ -46,10 +46,10 @@ export default function BMI() {
 
 
     return (
-        <div className="ap">
+        <div data-testid="bmi-container" className="ap">
             <div className='cont'>
                 <div className='cent'>
-                    <h2>Check your BMI</h2>
+                    <h2 className="Heading">Check your BMI</h2>
                     <form onSubmit={calcBmi}>
                         <div>
                             <label>Weight (Kgs)</label>

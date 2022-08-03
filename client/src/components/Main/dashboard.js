@@ -164,7 +164,7 @@ export default function MainDashboard() {
                 </Form>
             </div>
 
-            <div className="container">
+            <div data-testid="itemBox" className="container">
                 <div className="grid">
                     {
                         fooditems.map((item) =>

@@ -36,7 +36,7 @@ export default function Nav1() {
                                 <Button className='ms-2' variant='secondary' onClick={() => navigate('/Signin')}><LoginSharpIcon /> Login</Button>
                                 <Button className='ms-2' variant='secondary' onClick={() => navigate('/signup')}><PersonAddSharpIcon /> Register</Button></div>
                                 :
-                                <div>
+                                <div >
                                     
                                 <NavDropdown className="mx-5"
                                     id="nav-dropdown-dark-example"
